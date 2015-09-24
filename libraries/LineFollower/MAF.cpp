@@ -1,4 +1,6 @@
 #include <MAF.h>
+#include <stdio.h>
+#include <string.h>
 
 void MAF::reset() {
   head = 0;

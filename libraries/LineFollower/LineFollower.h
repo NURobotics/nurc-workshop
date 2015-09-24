@@ -32,17 +32,17 @@ void state_update();
 void motion_update();
 
 /*State variables*/
-LineFollowerState state;
-Color left_color;
-Color right_color;
+extern LineFollowerState state;
+extern Color left_color;
+extern Color right_color;
 
 /*Sensor Variables*/
-MAF threshold_value;
-MAF left_color_value;
-MAF right_color_value;
+extern MAF threshold_value;
+extern MAF left_color_value;
+extern MAF right_color_value;
 
 /*Helpers*/
-Color color(int value, threshold) {
+inline Color color(int value, int threshold) {
   if(value < threshold) return LIGHT;
   else return DARK;
 }

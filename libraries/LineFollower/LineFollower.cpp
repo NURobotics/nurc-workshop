@@ -3,19 +3,35 @@
 
 namespace LineFollower {
 
+LineFollowerState state;
+Color left_color;
+Color right_color;
+
+MAF threshold_value;
+MAF left_color_value;
+MAF right_color_value;
+
 void motion_update() {
   switch(state) {
     case ON_COURSE: {
       // Keep the robot on course as long as you can
+      analogWrite(LEFT_MOTOR_PIN, 255);
+      analogWrite(RIGHT_MOTOR_PIN, 255);
     }
     case FAR_LEFT: {
       // Move the robot back on course
+      analogWrite(LEFT_MOTOR_PIN, 255);
+      analogWrite(RIGHT_MOTOR_PIN, 127);
     }
     case FAR_RIGHT: {
       // Move the robot back on course
+      analogWrite(LEFT_MOTOR_PIN, 127);
+      analogWrite(RIGHT_MOTOR_PIN, 255);
     }
     case OFF_COURSE: {
       // Find the course course
+      analogWrite(LEFT_MOTOR_PIN, 0);
+      analogWrite(RIGHT_MOTOR_PIN, 0);
     }
   }
 }
