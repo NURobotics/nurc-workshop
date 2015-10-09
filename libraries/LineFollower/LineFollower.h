@@ -1,11 +1,14 @@
 #ifndef LINEFOLLOWER_H_
 #define LINEFOLLOWER_H_
 
-#define THRESHOLD_PIN     2
-#define LEFT_COLOR_PIN    3
-#define RIGHT_COLOR_PIN   4
-#define LEFT_MOTOR_PIN    0
-#define RIGHT_MOTOR_PIN   1
+#define THRESHOLD_PIN     2			// PIN2
+#define THRESHOLD_AN      1			// A1
+#define LEFT_COLOR_PIN    3			// PIN3
+#define LEFT_COLOR_AN     3         // AN3
+#define RIGHT_COLOR_PIN   4			// PIN4
+#define RIGHT_COLOR_AN    2         // AN2
+#define LEFT_MOTOR_PIN    0			// PIN0
+#define RIGHT_MOTOR_PIN   1			// PIN1
 
 #include <MAF.h>
 
@@ -43,8 +46,8 @@ extern MAF right_color_value;
 
 /*Helpers*/
 inline Color color(int value, int threshold) {
-  if(value < threshold) return LIGHT;
-  else return DARK;
+  if(value < threshold) return DARK;
+  else return LIGHT;
 }
 
 } // LineFollower
