@@ -17,25 +17,25 @@ void motion_update() {
       // Keep the robot on course as long as you can
       analogWrite(LEFT_MOTOR_PIN, 255);
       analogWrite(RIGHT_MOTOR_PIN, 255);
-	  break;
+      break;
     }
     case FAR_LEFT: {
       // Move the robot back on course
       analogWrite(LEFT_MOTOR_PIN, 255);
       analogWrite(RIGHT_MOTOR_PIN, 127);
-	  break;
+      break;
     }
     case FAR_RIGHT: {
       // Move the robot back on course
       analogWrite(LEFT_MOTOR_PIN, 127);
       analogWrite(RIGHT_MOTOR_PIN, 255);
-	  break;
+      break;
     }
     case OFF_COURSE: {
       // Find the course course
       analogWrite(LEFT_MOTOR_PIN, 0);
       analogWrite(RIGHT_MOTOR_PIN, 0);
-	  break;
+      break;
     }
   }
 }
@@ -47,24 +47,24 @@ void state_update() {
         state = FAR_RIGHT;
       else if(left_color == LIGHT && right_color == DARK)
         state = FAR_LEFT;
-	  break;
+      break;
     }
     case FAR_LEFT: {
       if(right_color == LIGHT)
         state = OFF_COURSE;
-	  break;
+      break;
     }
     case FAR_RIGHT: {
       if(left_color == LIGHT)
         state = OFF_COURSE;
-	  break;
+      break;
     }
     case OFF_COURSE: {
       if(left_color == DARK && right_color == LIGHT)
         state = FAR_RIGHT;
       else if(left_color == LIGHT && right_color == DARK)
         state = FAR_LEFT;
-	  break;
+      break;
     }
   }
 }
@@ -96,8 +96,8 @@ void reset() {
   pinMode(RIGHT_MOTOR_PIN, OUTPUT);
 
   // Initialize motors to halt
-  analogWrite(LEFT_MOTOR_PIN, 0);
-  analogWrite(RIGHT_MOTOR_PIN, 0);
+  analogWrite(LEFT_MOTOR_PIN, 255);
+  analogWrite(RIGHT_MOTOR_PIN, 255);
 
   // Reset the filters
   threshold_value.reset();

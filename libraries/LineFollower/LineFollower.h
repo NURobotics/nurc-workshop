@@ -4,9 +4,9 @@
 #define THRESHOLD_PIN     2			// PIN2
 #define THRESHOLD_AN      1			// A1
 #define LEFT_COLOR_PIN    3			// PIN3
-#define LEFT_COLOR_AN     3         // AN3
+#define LEFT_COLOR_AN     3     // AN3
 #define RIGHT_COLOR_PIN   4			// PIN4
-#define RIGHT_COLOR_AN    2         // AN2
+#define RIGHT_COLOR_AN    2     // AN2
 #define LEFT_MOTOR_PIN    0			// PIN0
 #define RIGHT_MOTOR_PIN   1			// PIN1
 
