@@ -43,27 +43,51 @@ void motion_update() {
 void state_update() {
   switch(state) {
     case ON_COURSE: {
-      if(left_color == DARK && right_color == LIGHT)
-        state = FAR_RIGHT;
-      else if(left_color == LIGHT && right_color == DARK)
+      if (left_color == DARK && right_color == DARK) {
+        state = ON_COURSE;
+      } else if (left_color == LIGHT && right_color == DARK) {
         state = FAR_LEFT;
+      } else if (left_color == DARK && right_color == LIGHT) {
+        state = FAR_RIGHT;
+      } else if (left_color == LIGHT && right_color == LIGHT) {
+        state = OFF_COURSE;
+      }
       break;
     }
     case FAR_LEFT: {
-      if(right_color == LIGHT)
-        state = OFF_COURSE;
+      if (left_color == DARK && right_color == DARK) {
+        state = ON_COURSE;
+      } else if (left_color == LIGHT && right_color == DARK) {
+        state = FAR_LEFT;
+      } else if (left_color == DARK && right_color == LIGHT) {
+        state = FAR_RIGHT;
+      } else if (left_color == LIGHT && right_color == LIGHT) {
+        state = FAR_LEFT;
+      }
       break;
     }
     case FAR_RIGHT: {
-      if(left_color == LIGHT)
-        state = OFF_COURSE;
+      if (left_color == DARK && right_color == DARK) {
+        state = ON_COURSE;
+      } else if (left_color == LIGHT && right_color == DARK) {
+        state = FAR_LEFT;
+      } else if (left_color == DARK && right_color == LIGHT) {
+        state = FAR_RIGHT;
+      } else if (left_color == LIGHT && right_color == LIGHT) {
+        state = FAR_RIGHT;
+      }
       break;
     }
     case OFF_COURSE: {
-      if(left_color == DARK && right_color == LIGHT)
-        state = FAR_RIGHT;
-      else if(left_color == LIGHT && right_color == DARK)
+      if (left_color == DARK && right_color == DARK) {
+        state = ON_COURSE;
+      } else if (left_color == LIGHT && right_color == DARK) {
         state = FAR_LEFT;
+      } else if (left_color == DARK && right_color == LIGHT) {
+        state = FAR_RIGHT;
+      } else if (left_color == LIGHT && right_color == LIGHT) {
+        state = OFF_COURSE;
+      }
       break;
     }
   }
@@ -96,8 +120,8 @@ void reset() {
   pinMode(RIGHT_MOTOR_PIN, OUTPUT);
 
   // Initialize motors to halt
-  analogWrite(LEFT_MOTOR_PIN, 255);
-  analogWrite(RIGHT_MOTOR_PIN, 255);
+  analogWrite(LEFT_MOTOR_PIN, 0);
+  analogWrite(RIGHT_MOTOR_PIN, 0);
 
   // Reset the filters
   threshold_value.reset();
