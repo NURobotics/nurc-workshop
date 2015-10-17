@@ -3397,15 +3397,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="7.62" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="LM7805" gate="1" pin="OUT"/>
-<wire x1="-2.54" y1="76.2" x2="5.08" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="DRV8835" gate="G$1" pin="VCC"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="5.08" y1="76.2" x2="50.8" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="71.12" x2="5.08" y2="76.2" width="0.1524" layer="91"/>
-<junction x="5.08" y="76.2"/>
-</segment>
-<segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="22.86" y1="58.42" x2="25.4" y2="58.42" width="0.1524" layer="91"/>
 <label x="25.4" y="58.42" size="1.778" layer="95" xref="yes"/>
@@ -3419,6 +3410,33 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="71.12" y1="2.54" x2="73.66" y2="2.54" width="0.1524" layer="91"/>
 <label x="73.66" y="2.54" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SCREW_TERMINAL" gate="G$1" pin="1"/>
+<pinref part="LM7805" gate="1" pin="IN"/>
+<wire x1="-27.94" y1="76.2" x2="-17.78" y2="76.2" width="0.1524" layer="91"/>
+<junction x="-27.94" y="76.2"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="71.12" x2="-27.94" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="VDD" pin="VDD"/>
+<wire x1="-43.18" y1="88.9" x2="-43.18" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="76.2" x2="-27.94" y2="76.2" width="0.1524" layer="91"/>
+<junction x="-43.18" y="76.2"/>
+<wire x1="-43.18" y1="76.2" x2="-45.72" y2="76.2" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DRV8835" gate="G$1" pin="VIN"/>
+<wire x1="83.82" y1="76.2" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="76.2" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="LM7805" gate="1" pin="OUT"/>
+<wire x1="-2.54" y1="76.2" x2="5.08" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="DRV8835" gate="G$1" pin="VCC"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="5.08" y1="76.2" x2="50.8" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="71.12" x2="5.08" y2="76.2" width="0.1524" layer="91"/>
+<junction x="5.08" y="76.2"/>
+<wire x1="99.06" y1="83.82" x2="5.08" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="83.82" x2="5.08" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -3569,26 +3587,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="ATTINY85" gate="G$1" pin="2"/>
 <wire x1="48.26" y1="27.94" x2="25.4" y2="27.94" width="0.1524" layer="91"/>
 <junction x="25.4" y="27.94"/>
-</segment>
-</net>
-<net name="9V" class="0">
-<segment>
-<pinref part="SUPPLY1" gate="VDD" pin="VDD"/>
-<wire x1="-43.18" y1="88.9" x2="-43.18" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="SCREW_TERMINAL" gate="G$1" pin="1"/>
-<wire x1="-43.18" y1="76.2" x2="-45.72" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="LM7805" gate="1" pin="IN"/>
-<wire x1="-43.18" y1="76.2" x2="-27.94" y2="76.2" width="0.1524" layer="91"/>
-<junction x="-43.18" y="76.2"/>
-<pinref part="DRV8835" gate="G$1" pin="VIN"/>
-<wire x1="-27.94" y1="76.2" x2="-17.78" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="76.2" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="76.2" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="83.82" x2="-27.94" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="-27.94" y1="83.82" x2="-27.94" y2="76.2" width="0.1524" layer="91"/>
-<junction x="-27.94" y="76.2"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="-27.94" y1="71.12" x2="-27.94" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
