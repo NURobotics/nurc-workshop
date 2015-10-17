@@ -3328,8 +3328,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="DRV8835" library="pololu" deviceset="POLOLU_MOTOR_DRV8835" device="THROUGHHOLE"/>
 <part name="10K" library="SparkFun-Passives" deviceset="POTENTIOMETER" device=""/>
 <part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="1K"/>
-<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="300K"/>
-<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="300K"/>
+<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="330K"/>
+<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="330K"/>
 <part name="SCREW_TERMINAL" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT"/>
 <part name="SW1" library="adafruit" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE"/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VDD" device=""/>
@@ -3342,6 +3342,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="MOTOR_B" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="EZ" value="0.1uF"/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="EZ" value="0.1uF"/>
+<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="330"/>
 </parts>
 <sheets>
 <sheet>
@@ -3369,6 +3370,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="MOTOR_B" gate="G$1" x="127" y="60.96" rot="R180"/>
 <instance part="C1" gate="G$1" x="5.08" y="66.04"/>
 <instance part="C2" gate="G$1" x="-27.94" y="66.04"/>
+<instance part="R1" gate="G$1" x="45.72" y="2.54" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -3455,15 +3457,15 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="SW1" gate="G$1" pin="P$1"/>
 <wire x1="-12.7" y1="48.26" x2="-40.64" y2="48.26" width="0.1524" layer="91"/>
 <junction x="-40.64" y="48.26"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="25.4" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
-<junction x="25.4" y="2.54"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="-27.94" y1="63.5" x2="-27.94" y2="58.42" width="0.1524" layer="91"/>
 <junction x="-27.94" y="58.42"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="5.08" y1="63.5" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
 <junction x="5.08" y="58.42"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="25.4" y1="2.54" x2="40.64" y2="2.54" width="0.1524" layer="91"/>
+<junction x="25.4" y="2.54"/>
 </segment>
 <segment>
 <pinref part="DRV8835" gate="G$1" pin="LGND"/>
@@ -3599,6 +3601,13 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="30.48" y1="30.48" x2="48.26" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <junction x="22.86" y="48.26"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<wire x1="50.8" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
